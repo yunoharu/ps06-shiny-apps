@@ -5,9 +5,9 @@ account: yharu
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 8478069
-bundleId: 6916394
+bundleId: 6919989
 url: https://yharu.shinyapps.io/ps06-shiny-apps/
-when: 1677970965.87106
-lastSyncTime: 1677970965.87109
+when: 1678082840.13859
+lastSyncTime: 1678082840.1386
 asMultiple: FALSE
 asStatic: FALSE

@@ -14,7 +14,9 @@ ui <- fluidPage(
                  strong(ncol(uah)),
                  "columns and ",
                  strong(nrow(uah)),
-                 "rows.")
+                 "rows."),
+               p("Here is a small (random) sample of data:"),
+               tableOutput("table1")
              )
              ),
     tabPanel("Plot",
@@ -54,7 +56,7 @@ ui <- fluidPage(
                                  max=max(uah$year),
                                  value=c(1978,2023))),
                    mainPanel(textOutput("text2"),
-                             tableOutput("table")
+                             tableOutput("table2")
                 )))))
 
 
@@ -95,7 +97,10 @@ server <- function(input, output){
         labs(x="Year", y="Average Temperature")
     }
   })
-  output$table <- renderTable({
+  output$table1 <- renderTable({
+    uah[sample(nrow(uah), 5),] 
+  })
+  output$table2 <- renderTable({
       uah %>%
       filter(year >= input$year[1],
              year <= input$year[2]) %>% 
